@@ -16,17 +16,14 @@ public class Rover {
 	}
 
 	public void spinLeft() {
-		// FIXME: implement
-		throw new RuntimeException("Not yet implemented");
+		this.location = location.leftLocation();
 	}
 
 	public void spinRight() {
-		// FIXME: implement
-		throw new RuntimeException("Not yet implemented");
+		this.location = location.rightLocation();
 	}
 
 	public void moveForward() {
-		// FIXME: implement
-		throw new RuntimeException("Not yet implemented");
+		this.location = location.forwardingLocation();
 	}
 }
