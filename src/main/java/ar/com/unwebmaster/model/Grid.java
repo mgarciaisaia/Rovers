@@ -28,7 +28,7 @@ public class Grid {
 	}
 
 	private void validateCoordinate(Point coordinate) {
-		// XXX: too much comparations. Should be a better way... (¿aPoint.greaterThan(anotherPoint)?)
+		// XXX: too much comparations. Should be "new Rectangle(corner1, corner2).contains(coordinate)"
 		if (coordinate.x() < lowestCorner.x() || coordinate.x() > topCorner.x() || coordinate.y() < lowestCorner.y() || coordinate.y() > topCorner.y()) {
 			throw new RuntimeException("Coordinate " + coordinate.toString() + " out of range " + lowestCorner.toString() + " - " + topCorner.toString());
 		}
