@@ -37,16 +37,6 @@ public class Position {
 		if (getClass() != obj.getClass())
 			return false;
 		Position other = (Position) obj;
-		if (coordinate == null) {
-			if (other.coordinate != null)
-				return false;
-		} else if (!coordinate.equals(other.coordinate))
-			return false;
-		if (ground == null) {
-			if (other.ground != null)
-				return false;
-		} else if (!ground.equals(other.ground))
-			return false;
-		return true;
+		return coordinate.equals(other.coordinate()) && ground.equals(other.ground());
 	}
 }
