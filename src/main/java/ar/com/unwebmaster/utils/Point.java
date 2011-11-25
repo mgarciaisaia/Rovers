@@ -24,4 +24,9 @@ public class Point {
 	public Integer getY() {
 		return y;
 	}
+
+	@Override
+	public String toString() {
+		return "(" + x + ", " + y + ")";
+	}
 }
