@@ -26,7 +26,7 @@ public class Location {
 	}
 	
 	public Grid ground() {
-		return position.getGround();
+		return position.ground();
 	}
 
 	public Location leftLocation() {

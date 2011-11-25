@@ -11,6 +11,6 @@ public abstract class Orientation {
 	public abstract Point versor();
 
 	public Point coordinateForwarding(Position position) {
-		return position.getCoordinate().add(this.versor());
+		return position.coordinate().add(this.versor());
 	}
 }

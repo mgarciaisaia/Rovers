@@ -11,19 +11,11 @@ public class Position {
 		this.ground = ground;
 	}
 
-	public void setCoordinate(Point coordinate) {
-		this.coordinate = coordinate;
-	}
-
-	public Point getCoordinate() {
+	public Point coordinate() {
 		return coordinate;
 	}
 
-	public void setGround(Grid ground) {
-		this.ground = ground;
-	}
-
-	public Grid getGround() {
+	public Grid ground() {
 		return ground;
 	}
 }
