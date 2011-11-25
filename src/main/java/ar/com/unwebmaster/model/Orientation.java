@@ -2,11 +2,15 @@ package ar.com.unwebmaster.model;
 
 import ar.com.unwebmaster.utils.Point;
 
-// FIXME: implement
-public interface Orientation {
-	public Orientation atLeft();
+// TODO: need to subclass? can't there be just 4 instances and that's it?
+public abstract class Orientation {
+	public abstract Orientation atLeft();
 
-	public Orientation atRight();
+	public abstract Orientation atRight();
+	
+	public abstract Point versor();
 
-	public Point coordinateForwarding(Position position);
+	public Point coordinateForwarding(Position position) {
+		return position.getCoordinate().add(this.versor());
+	}
 }
