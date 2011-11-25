@@ -1,27 +1,27 @@
 package ar.com.unwebmaster.utils;
 
 public class Point {
-	private Number x;
-	private Number y;
+	private Integer x;
+	private Integer y;
 
-	public Point(Number x, Number y) {
+	public Point(Integer x, Integer y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public void setX(Number x) {
+	public void setX(Integer x) {
 		this.x = x;
 	}
 
-	public Number getX() {
+	public Integer getX() {
 		return x;
 	}
 
-	public void setY(Number y) {
+	public void setY(Integer y) {
 		this.y = y;
 	}
 
-	public Number getY() {
+	public Integer getY() {
 		return y;
 	}
 }
