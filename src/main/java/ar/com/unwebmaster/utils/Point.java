@@ -30,6 +30,10 @@ public class Point {
 		return "(" + x + ", " + y + ")";
 	}
 
+	public Point add(Point anotherPoint) {
+		return new Point(x + anotherPoint.getX(), y + anotherPoint.getY());
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
