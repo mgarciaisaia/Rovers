@@ -29,7 +29,7 @@ public class Grid {
 
 	private void validateCoordinate(Point coordinate) {
 		// XXX: too much comparations. Should be a better way... (¿aPoint.greaterThan(anotherPoint)?)
-		if (coordinate.getX() < lowestCorner.getX() || coordinate.getX() > topCorner.getX() || coordinate.getY() < lowestCorner.getY() || coordinate.getY() > topCorner.getY()) {
+		if (coordinate.x() < lowestCorner.x() || coordinate.x() > topCorner.x() || coordinate.y() < lowestCorner.y() || coordinate.y() > topCorner.y()) {
 			throw new RuntimeException("Coordinate " + coordinate.toString() + " out of range " + lowestCorner.toString() + " - " + topCorner.toString());
 		}
 	}

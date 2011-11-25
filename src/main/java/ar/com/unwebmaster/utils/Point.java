@@ -1,27 +1,19 @@
 package ar.com.unwebmaster.utils;
 
 public class Point {
-	private Integer x;
-	private Integer y;
+	private final Integer x;
+	private final Integer y;
 
 	public Point(Integer x, Integer y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public void setX(Integer x) {
-		this.x = x;
-	}
-
-	public Integer getX() {
+	public Integer x() {
 		return x;
 	}
 
-	public void setY(Integer y) {
-		this.y = y;
-	}
-
-	public Integer getY() {
+	public Integer y() {
 		return y;
 	}
 
@@ -31,7 +23,7 @@ public class Point {
 	}
 
 	public Point add(Point anotherPoint) {
-		return new Point(x + anotherPoint.getX(), y + anotherPoint.getY());
+		return new Point(x + anotherPoint.x(), y + anotherPoint.y());
 	}
 
 	@Override
