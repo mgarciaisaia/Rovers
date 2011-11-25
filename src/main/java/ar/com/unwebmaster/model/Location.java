@@ -4,6 +4,11 @@ public class Location {
 	private Position position;
 	private Orientation orientation;
 
+	public Location(Position position, Orientation orientation) {
+		this.position = position;
+		this.orientation = orientation;
+	}
+
 	public void setPosition(Position position) {
 		this.position = position;
 	}
@@ -19,19 +24,20 @@ public class Location {
 	public Orientation getOrientation() {
 		return orientation;
 	}
+	
+	public Grid ground() {
+		return position.getGround();
+	}
 
 	public Location leftLocation() {
-		// FIXME: implement
-				throw new RuntimeException("Location.leftLocation - not yet implemented");
+		return new Location(position, orientation.atLeft());
 	}
 
 	public Location rightLocation() {
-		// FIXME: implement
-				throw new RuntimeException("Location.rightLocation - not yet implemented");
+		return new Location(position, orientation.atRight());
 	}
 
 	public Location forwardingLocation() {
-		// FIXME: implement
-				throw new RuntimeException("Location.forwardingLocation - not yet implemented");
+		return new Location(this.ground().positionAt(orientation.coordinateForwarding(position)), orientation);
 	}
 }

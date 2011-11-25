@@ -6,6 +6,11 @@ public class Position {
 	private Point coordinate;
 	private Grid ground;
 
+	public Position(Point coordinate, Grid ground) {
+		this.coordinate = coordinate;
+		this.ground = ground;
+	}
+
 	public void setCoordinate(Point coordinate) {
 		this.coordinate = coordinate;
 	}
