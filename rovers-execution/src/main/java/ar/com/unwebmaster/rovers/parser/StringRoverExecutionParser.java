@@ -8,13 +8,11 @@ import ar.com.unwebmaster.rovers.executor.LocationSpecification;
 import ar.com.unwebmaster.rovers.executor.RoverExecutionSpecification;
 import ar.com.unwebmaster.rovers.executor.RoverSpecification;
 import ar.com.unwebmaster.rovers.executor.commands.RoverCommand;
-import ar.com.unwebmaster.rovers.factory.OrientationFactory;
-import ar.com.unwebmaster.rovers.factory.RoverCommandFactory;
 
 // FIXME: get a name :)
 public class StringRoverExecutionParser {
-	private OrientationFactory orientationsFactory = new OrientationFactory();
-	private RoverCommandFactory commandsFactory = new RoverCommandFactory();
+	private OrientationFormatter orientationsFormatter = new OrientationFormatter();
+	private RoverCommandFormatter commandsFormatter = new RoverCommandFormatter();
 
 	public RoverExecutionSpecification parse(String inputCommand) {
 		StringTokenizer tokenizer = new StringTokenizer(inputCommand.trim().toUpperCase(), "\n");
@@ -30,14 +28,14 @@ public class StringRoverExecutionParser {
 		// String are not Iterable (as if they we're not a List<Character>...)
 		List<RoverCommand> commands = new ArrayList<RoverCommand>();
 		for (Integer index = 0; index < commandsString.length(); index++) {
-			commands.add(commandsFactory.command(commandsString.charAt(index)));
+			commands.add(commandsFormatter.parse(commandsString.charAt(index)));
 		}
 		return new RoverSpecification(this.parseLocation(locationString, ground), commands);
 	}
 
 	public LocationSpecification parseLocation(String locationString, GridSpecification ground) {
 		String[] locationParameters = locationString.split(" ", 3);
-		return new LocationSpecification(new Integer(locationParameters[0]), new Integer(locationParameters[1]), ground, orientationsFactory.orientation(locationParameters[2]));
+		return new LocationSpecification(new Integer(locationParameters[0]), new Integer(locationParameters[1]), ground, orientationsFormatter.parse(locationParameters[2]));
 	}
 
 	public GridSpecification parseGrid(String gridParameters) {
