@@ -17,7 +17,7 @@ public class StringRoverExecutionParser {
 	private RoverCommandFactory commandsFactory = new RoverCommandFactory();
 
 	public RoverExecutionSpecification parse(String inputCommand) {
-		StringTokenizer tokenizer = new StringTokenizer(inputCommand);
+		StringTokenizer tokenizer = new StringTokenizer(inputCommand.trim().toUpperCase());
 		GridSpecification ground = this.parseGrid(tokenizer.nextToken());
 		List<RoverSpecification> rovers = new ArrayList<RoverSpecification>();
 		while (tokenizer.hasMoreTokens()) {
