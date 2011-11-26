@@ -13,6 +13,7 @@ public class RoverCommandFormatter implements Formatter<RoverCommand>, Parser<Ro
 	private Map<String, RoverCommand> commands = new HashMap<String, RoverCommand>();
 	private Map<RoverCommand, String> commandsInverse = new HashMap<RoverCommand, String>();
 
+	// TODO: keeps smelling
 	public RoverCommandFormatter() {
 		commands.put("L", new LeftSpin());
 		commands.put("R", new RightSpin());
