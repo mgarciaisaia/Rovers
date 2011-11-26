@@ -17,7 +17,7 @@ public class StringRoverExecutionParser {
 	private RoverCommandFactory commandsFactory = new RoverCommandFactory();
 
 	public RoverExecutionSpecification parse(String inputCommand) {
-		StringTokenizer tokenizer = new StringTokenizer(inputCommand.trim().toUpperCase());
+		StringTokenizer tokenizer = new StringTokenizer(inputCommand.trim().toUpperCase(), "\n");
 		GridSpecification ground = this.parseGrid(tokenizer.nextToken());
 		List<RoverSpecification> rovers = new ArrayList<RoverSpecification>();
 		while (tokenizer.hasMoreTokens()) {
@@ -26,7 +26,7 @@ public class StringRoverExecutionParser {
 		return new RoverExecutionSpecification(ground, rovers);
 	}
 
-	private RoverSpecification parseRoverSpecification(String locationString, String commandsString, GridSpecification ground) {
+	public RoverSpecification parseRoverSpecification(String locationString, String commandsString, GridSpecification ground) {
 		// String are not Iterable (as if they we're not a List<Character>...)
 		List<RoverCommand> commands = new ArrayList<RoverCommand>();
 		for (Integer index = 0; index < commandsString.length(); index++) {
@@ -35,12 +35,12 @@ public class StringRoverExecutionParser {
 		return new RoverSpecification(this.parseLocation(locationString, ground), commands);
 	}
 
-	private LocationSpecification parseLocation(String locationString, GridSpecification ground) {
+	public LocationSpecification parseLocation(String locationString, GridSpecification ground) {
 		String[] locationParameters = locationString.split(" ", 3);
 		return new LocationSpecification(new Integer(locationParameters[0]), new Integer(locationParameters[1]), ground, orientationsFactory.orientation(locationParameters[2]));
 	}
 
-	private GridSpecification parseGrid(String gridParameters) {
+	public GridSpecification parseGrid(String gridParameters) {
 		// TODO: improve (regex?)
 		String[] parameters = gridParameters.split(" ", 2);
 		return new GridSpecification(new Integer(parameters[0]), new Integer(parameters[1]));
