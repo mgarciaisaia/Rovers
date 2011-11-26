@@ -4,6 +4,8 @@
 + WebInterface: look&feel
 + WebInterface: error handling
 
++ WebInterface: fancy GUI for building query (clicking buttons rather than writting a string) 
+
 + Rover-Execution: extract CommandLine interface to a separate package
 
 * In-code tasks (TODO's, FIXME's)
