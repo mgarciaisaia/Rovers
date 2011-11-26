@@ -1,0 +1,13 @@
+== TODO List ==
++++ Tests!
++ WebInterface: discriminate favicon.ico queries
++ WebInterface: look&feel
++ WebInterface: error handling
+
++ Rover-Execution: extract CommandLine interface to a separate package
+
+* In-code tasks (TODO's, FIXME's)
+
+* CommandLine interface: refactor code (be less procedural)
+
+* Logging: implement better logging methods
