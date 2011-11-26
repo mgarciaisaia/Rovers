@@ -1,6 +1,7 @@
 package ar.com.unwebmaster.executor;
 
 import java.util.List;
+import ar.com.unwebmaster.executor.commands.RoverCommand;
 import ar.com.unwebmaster.model.Rover;
 
 public class RoverSpecification {

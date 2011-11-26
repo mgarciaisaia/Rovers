@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.StringTokenizer;
 import ar.com.unwebmaster.executor.GridSpecification;
 import ar.com.unwebmaster.executor.LocationSpecification;
-import ar.com.unwebmaster.executor.RoverCommand;
 import ar.com.unwebmaster.executor.RoverExecutionSpecification;
 import ar.com.unwebmaster.executor.RoverSpecification;
+import ar.com.unwebmaster.executor.commands.RoverCommand;
 import ar.com.unwebmaster.factory.OrientationFactory;
 import ar.com.unwebmaster.factory.RoverCommandFactory;
 

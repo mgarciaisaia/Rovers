@@ -1,4 +1,4 @@
-package ar.com.unwebmaster.executor;
+package ar.com.unwebmaster.executor.commands;
 
 import ar.com.unwebmaster.model.Rover;
 
