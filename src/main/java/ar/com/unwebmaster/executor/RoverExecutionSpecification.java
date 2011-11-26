@@ -1,12 +1,30 @@
 package ar.com.unwebmaster.executor;
 
 import java.util.List;
-import ar.com.unwebmaster.model.Grid;
 
 public class RoverExecutionSpecification {
+	private GridSpecification groundSpecification;
+	private List<RoverSpecification> roverSpecifications;
 
-	public RoverExecutionSpecification(Grid ground, List<RoverSpecification> rovers) {
-		// TODO Auto-generated constructor stub
+	public RoverExecutionSpecification(GridSpecification groundSpecification, List<RoverSpecification> roverSpecifications) {
+		this.groundSpecification = groundSpecification;
+		this.roverSpecifications = roverSpecifications;
+	}
+
+	public void setGroundSpecification(GridSpecification groundSpecification) {
+		this.groundSpecification = groundSpecification;
+	}
+
+	public GridSpecification getGroundSpecification() {
+		return groundSpecification;
+	}
+
+	public void setRoverSpecifications(List<RoverSpecification> roverSpecifications) {
+		this.roverSpecifications = roverSpecifications;
+	}
+
+	public List<RoverSpecification> getRoverSpecifications() {
+		return roverSpecifications;
 	}
 
 }
