@@ -3,21 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ar.com.unwebmaster</groupId>
-	<artifactId>rovers</artifactId>
+	<artifactId>rovers-model</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
-	<name>Rovers Parent Project</name>
+	<name>Rovers Model</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-	<modules>
-		<module>rovers-model</module>
-		<module>rovers-execution</module>
-	</modules>
 
 	<dependencies>
 		<dependency>
