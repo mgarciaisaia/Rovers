@@ -2,6 +2,7 @@ package ar.com.unwebmaster.rovers.parser;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Map.Entry;
 import ar.com.unwebmaster.rovers.executor.commands.LeftSpin;
 import ar.com.unwebmaster.rovers.executor.commands.MoveForward;
@@ -31,10 +32,21 @@ public class RoverCommandFormatter implements Formatter<RoverCommand>, Parser<Ro
 
 	@Override
 	public RoverCommand parse(String input) {
+		if(!this.isValid(input)) {
+			throw new NoSuchElementException(input + " is not a valid rover command");
+		}
 		return commands.get(input);
+	}
+	
+	public Boolean isValid(String input) {
+		return commands.containsKey(input);
 	}
 
 	public RoverCommand parse(Character input) {
 		return this.parse("" + input);
+	}
+
+	public Boolean isValid(Character character) {
+		return this.isValid("" + character);
 	}
 }

@@ -12,6 +12,7 @@ import ar.com.unwebmaster.rovers.executor.commands.MoveForward;
 import ar.com.unwebmaster.rovers.executor.commands.RightSpin;
 import ar.com.unwebmaster.rovers.model.orientations.NorthOrientation;
 import ar.com.unwebmaster.rovers.parser.StringRoverExecutionParser;
+import ar.com.unwebmaster.rovers.utils.CharactersCursor;
 import ar.com.unwebmaster.rovers.utils.Point;
 
 public class StringInputParserTest {
@@ -25,23 +26,23 @@ public class StringInputParserTest {
 
 	@Test
 	public void testParseGrid() {
-		GridSpecification grid = parser.parseGrid("5 5");
+		GridSpecification grid = parser.parseGrid(new CharactersCursor("55"));
 		Assert.assertEquals("Grid spec lowest", new Point(0, 0), grid.grid().getLowestCorner());
 		Assert.assertEquals("Grid spec top", new Point(5, 5), grid.grid().getTopCorner());
 	}
 
 	@Test
 	public void testParseLocation() {
-		GridSpecification grid = parser.parseGrid("5 5");
-		LocationSpecification locationSpecification = parser.parseLocation("1 2 N", grid);
+		GridSpecification grid = parser.parseGrid(new CharactersCursor("55"));
+		LocationSpecification locationSpecification = parser.parseLocation(new CharactersCursor("12N"), grid);
 		Assert.assertEquals("Location's orientation", new NorthOrientation(), locationSpecification.location().getOrientation());
 		Assert.assertEquals("Location's coordinate", new Point(1, 2), locationSpecification.location().getPosition().coordinate());
 	}
 
 	@Test
 	public void testParseRover() {
-		GridSpecification grid = parser.parseGrid("5 5");
-		RoverSpecification roverSpecification = parser.parseRoverSpecification("1 2 N", "LMLMLMLMM", grid);
+		GridSpecification grid = parser.parseGrid(new CharactersCursor("55"));
+		RoverSpecification roverSpecification = parser.parseRoverSpecification(new CharactersCursor("12NLMLMLMLMM"), grid);
 		Assert.assertEquals("Rover's Location's orientation", new NorthOrientation(), roverSpecification.rover().getLocation().getOrientation());
 		Assert.assertEquals("Rover's Location's coordinate", new Point(1, 2), roverSpecification.rover().getLocation().getPosition().coordinate());
 

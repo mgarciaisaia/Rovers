@@ -3,6 +3,7 @@ package ar.com.unwebmaster.rovers.parser;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
 import ar.com.unwebmaster.rovers.model.Orientation;
 import ar.com.unwebmaster.rovers.model.orientations.EastOrientation;
 import ar.com.unwebmaster.rovers.model.orientations.NorthOrientation;
@@ -33,6 +34,18 @@ public class OrientationFormatter implements Formatter<Orientation>, Parser<Orie
 
 	@Override
 	public Orientation parse(String text) {
+		if(!this.isValid(text)) {
+			throw new NoSuchElementException(text + " is not a valid orientation");
+		}
 		return orientations.get(text.toUpperCase().trim());
+	}
+	
+	public Orientation parse(Character character) {
+		return this.parse("" + character);
+	}
+
+	@Override
+	public Boolean isValid(String input) {
+		return orientations.containsKey(input);
 	}
 }
