@@ -30,7 +30,7 @@ public class StringRoverExecutionParser {
 		// String are not Iterable (as if they we're not a List<Character>...)
 		List<RoverCommand> commands = new ArrayList<RoverCommand>();
 		for (Integer index = 0; index < commandsString.length(); index++) {
-			commandsFactory.command(commandsString.charAt(index));
+			commands.add(commandsFactory.command(commandsString.charAt(index)));
 		}
 		return new RoverSpecification(this.parseLocation(locationString, ground), commands);
 	}
