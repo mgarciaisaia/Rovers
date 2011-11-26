@@ -1,0 +1,7 @@
+== Rovers ==
+
+This is my Mars Rovers implementation.
+
+It currently has two possible entry points: by CommandLine, running rovers-execution, or via web, running rovers-web-interface.
+
+Both of them receive a string of characters as input, being whitespace-insensitive, and return a string representing each of the rover's final location.
